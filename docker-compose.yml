@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: compose/flask/Dockerfile
+    container_name: sj-web-01
+    ports:
+      - "8000:8000"
+    command: python /src/main.py
+    volumes:
+      - ./src:/src
+  
